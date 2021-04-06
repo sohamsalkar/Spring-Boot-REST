@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @Service
 public class CourseServiceImpl implements CourseService {
@@ -25,4 +26,24 @@ public class CourseServiceImpl implements CourseService {
 		return list;	
 	}
 
+	@Override
+	public Courses getCourse(long courseId) {
+		Courses c = null;
+		for(Courses course: list)
+		{
+			if(course.getId()== courseId) {
+				c=course;
+				break;
+			}
+		}
+		return c ;
+	}
+
+	@Override
+	public Courses addCourse(Courses course) {
+		list.add(course);
+		return course;
+	}
+	
+	
 }
