@@ -1,0 +1,28 @@
+package com.springrest.springrest.services;
+import com.springrest.springrest.entities.Courses;
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class CourseServiceImpl implements CourseService {
+	
+	List<Courses> list;
+	public CourseServiceImpl() {
+		list = new ArrayList<>();
+		list.add(new Courses( 10 , "java CORE" , "this is java core course" ) );
+		list.add(new Courses( 20 , "python CORE" , "this is python core course" ) );
+		list.add(new Courses( 30 , "ruby CORE" , "this is ruby core course" ) );
+		list.add(new Courses( 40 , "java ADVANCE" , "this is java advance course" ) );
+	}
+	
+	@Override
+	public List<Courses> getCourse()
+	{
+		return list;	
+	}
+
+}
